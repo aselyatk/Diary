@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Дневник</string>
+    <string name="title_main">Мой дневник</string>
+    <string name="hint_title">Заголовок</string>
+    <string name="hint_content">Описание</string>
+    <string name="btn_save">Сохранить</string>
+    <string name="msg_fill">Пожалуйста, заполните все поля</string>
+    <string name="dialog_delete_title">Удалить запись?</string>
+    <string name="dialog_delete_message">Вы действительно хотите удалить эту заметку?</string>
+    <string name="action_search">Поиск</string>
+    <string name="action_filter_date">Фильтр по дате</string>
+    <string name="msg_deleted">Запись удалена</string>
+    <string name="action_undo">Отменить</string>
+    <string name="title_trash">Корзина</string>
+    <string name="action_delete_forever">Удалить навсегда</string>
+    <string name="action_cancel">Отмена</string>
+    <string name="action_done">Готово</string>
+    <string name="title_edit_note">Редактировать заметку</string>
+    <string name="hint_category">Категория</string>
+    <string name="dialog_restore_title">Восстановить запись?</string>
+    <string name="dialog_restore_message">Выберите действие:</string>
+    <string name="action_restore">Восстановить</string>
+
+</resources>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Тёмная версия темы -->
+    <style name="DiaryTheme"      parent="Theme.MaterialComponents.DayNight.NoActionBar">
+
+        <item name="colorPrimary">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="materialCardViewStyle">@style/MyCard</item>
+        <!-- Цвет текста в полях ввода -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!-- Цвет подсказки (hint) в полях ввода -->
+        <item name="android:textColorHint">@color/white</item>
+    </style>
+
+</resources>
