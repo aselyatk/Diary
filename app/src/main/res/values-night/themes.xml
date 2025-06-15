@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!-- Тёмная версия темы -->
-    <style name="DiaryTheme"      parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
+    <!-- Тёмная версия той же самой темы -->
+    <style name="DiaryTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/purple_700</item>
         <item name="colorOnPrimary">@color/white</item>
         <item name="colorSecondary">@color/teal_200</item>
+
+        <!-- Карточки остаются такими же -->
         <item name="materialCardViewStyle">@style/MyCard</item>
-        <!-- Цвет текста в полях ввода -->
+
+        <!-- Ввод в полях тоже белый -->
         <item name="android:textColorPrimary">@color/white</item>
-        <!-- Цвет подсказки (hint) в полях ввода -->
         <item name="android:textColorHint">@color/white</item>
     </style>
 

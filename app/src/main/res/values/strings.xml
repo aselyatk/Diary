@@ -20,5 +20,8 @@
     <string name="dialog_restore_title">Восстановить запись?</string>
     <string name="dialog_restore_message">Выберите действие:</string>
     <string name="action_restore">Восстановить</string>
+    <string name="action_save">Сохранить</string>
+    <string name="error_empty_title">Пожалуйста, введите заголовок</string>
+
 
 </resources>

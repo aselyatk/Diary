@@ -1,26 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <!-- Базовая тема приложения -->
-    <style name="DiaryTheme"      parent="Theme.MaterialComponents.DayNight.NoActionBar">
-
+    <style name="DiaryTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary / onPrimary / secondary -->
         <item name="colorPrimary">@color/purple_500</item>
-        <!-- текст/иконки на тулбаре -->
         <item name="colorOnPrimary">@color/white</item>
-        <!-- акцентный цвет -->
         <item name="colorSecondary">@color/teal_200</item>
-        <!-- стиль карточек -->
+
+        <!-- Привязываем общий стиль карточек -->
         <item name="materialCardViewStyle">@style/MyCard</item>
-        <!-- Цвет текста в полях ввода -->
+
+        <!-- Цвета текста и подсказки в TextInput -->
         <item name="android:textColorPrimary">@color/white</item>
-        <!-- Цвет подсказки (hint) в полях ввода -->
         <item name="android:textColorHint">@color/white</item>
     </style>
 
-    <!-- Стиль для CardView -->
+    <!-- Стиль для всех MaterialCardView -->
     <style name="MyCard" parent="Widget.MaterialComponents.CardView">
         <item name="cardCornerRadius">12dp</item>
         <item name="cardElevation">4dp</item>
+        <item name="cardUseCompatPadding">true</item>
+        <!-- ripple-эффект при клике -->
+        <item name="android:foreground">?attr/selectableItemBackground</item>
     </style>
 
 </resources>
