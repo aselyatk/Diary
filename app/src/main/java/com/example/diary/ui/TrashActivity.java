@@ -1,8 +1,9 @@
 package com.example.diary.ui;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 
-import androidx.annotation.Nullable;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -18,27 +19,31 @@ public class TrashActivity extends AppCompatActivity {
     private DiaryAdapter adapter;
 
     @Override
-    protected void onCreate(@Nullable Bundle s) {
-        super.onCreate(s);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         b = ActivityTrashBinding.inflate(getLayoutInflater());
         setContentView(b.getRoot());
 
-        // Тулбар
+        // 1) Навешиваем тулбар
         setSupportActionBar(b.topAppBar);
-        getSupportActionBar().setTitle(R.string.title_trash);
+        if (getSupportActionBar() != null) {
+            // включаем стрелку «назад»
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            // заголовок уже задан в XML через app:title
+        }
 
-        // RecyclerView + Adapter
+        // 2) RecyclerView + Adapter
         adapter = new DiaryAdapter();
         b.recyclerView.setLayoutManager(new LinearLayoutManager(this));
         b.recyclerView.setAdapter(adapter);
 
-        // ViewModel
+        // 3) ViewModel — получаем список «мягко» удалённых записей
         vm = new ViewModelProvider(this).get(DiaryViewModel.class);
         vm.getTrash().observe(this, list -> adapter.setEntries(list));
 
-        // Long-click: восстановить или удалить навсегда
+        // 4) Долгое нажатие — диалог «восстановить» / «удалить навсегда»
         adapter.setListener(new DiaryAdapter.OnItemClickListener() {
-            @Override public void onItemClick(DiaryEntry e) { }
+            @Override public void onItemClick(DiaryEntry e) { /* клики в корзине не обрабатываем */ }
             @Override public void onItemLongClick(DiaryEntry e) {
                 new MaterialAlertDialogBuilder(TrashActivity.this)
                         .setTitle(R.string.dialog_restore_title)
@@ -51,5 +56,15 @@ public class TrashActivity extends AppCompatActivity {
                         .show();
             }
         });
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        // 5) Обработка стрелки «назад» в тулбаре
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
