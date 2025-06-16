@@ -44,7 +44,7 @@ public interface DiaryDao {
     @Query("DELETE FROM diary_table WHERE isDeleted = 1 AND deletedAt <= :cutoff")
     void purgeOlderThan(long cutoff);
 
-    // Добавляем этот метод
+
     @Query("DELETE FROM diary_table WHERE id = :id")
     void permanentDelete(int id);
     // Получить одну запись по её ID
